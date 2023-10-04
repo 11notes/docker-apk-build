@@ -31,7 +31,7 @@ Run Alpine build tools as build layer. Small, lightweight, secure and fast ğŸ”ï
 | `user` | docker | user docker |
 | `uid` | 1000 | user id 1000 |
 | `gid` | 1000 | group id 1000 |
-| `home` | /home/docker | home directory of user docker |
+| `home` | /apk | home directory of user docker |
 
 ## Parent
 * [alpine](https://hub.docker.com/_/alpine)
