@@ -4,7 +4,7 @@
 # :: Header
   FROM 11notes/alpine:arm64v8-stable
   COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
-  ENV APP_ROOT="/apk"
+  ENV APP_ROOT=/apk
 
 # :: Run
   USER root
@@ -16,6 +16,7 @@
         tzdata \
         shadow \
         alpine-sdk \
+        git \
         doas; \
       apk --no-cache upgrade; \
       apk update;

@@ -1,6 +1,6 @@
 # :: Header
   FROM 11notes/alpine:stable
-  ENV APP_ROOT="/apk"
+  ENV APP_ROOT=/apk
 
 # :: Run
   USER root
@@ -12,6 +12,7 @@
         tzdata \
         shadow \
         alpine-sdk \
+        git \
         doas; \
       apk --no-cache upgrade; \
       apk update;
