@@ -5,4 +5,4 @@
   cd ${APP_ROOT}/${APK_NAME}
   abuild checksum
   abuild -r
-  cp -R ${APP_ROOT}/packages/apk/ /apk
+  cp -R ${APP_ROOT}/packages/* /apk
