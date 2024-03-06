@@ -28,6 +28,8 @@
         /src \
         ${APP_ROOT};
 
+    COPY ./rootfs /
+
   # :: setup groups
     RUN set -ex; \
       addgroup docker wheel; \
