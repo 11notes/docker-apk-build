@@ -29,6 +29,8 @@
         ${APP_ROOT};
 
     COPY ./rootfs /
+    RUN set -ex; \
+      chmod +x -R /usr/local/bin
 
   # :: setup groups
     RUN set -ex; \
