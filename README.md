@@ -14,21 +14,13 @@ What can I do with this? Well simply put, you can build your own APK for Alpine 
 # :: Build
   FROM 11notes/apk-build:stable as build
   ENV APK_NAME="custom"
-
-  RUN set -ex; \
-    cd ~; \
-    newapkbuild ${APK_NAME};
-
-  COPY ./build /apk/${APK_NAME}
-
-  RUN set -ex; \
-    cd ~/${APK_NAME}; \
-    abuild checksum; \
-    abuild -r;
+  COPY ./build /src
+  RUN -set ex; \
+    apk-build
 
 # :: Header
   FROM 11notes/alpine:stable
-  COPY --from=build /apk/packages/apk /apk/custom <sup>1</sup>
+  COPY --from=build /apk /apk/custom <sup>1</sup>
   RUN set -ex; \
     apk add --no-cache --allow-untrusted --repository /apk/custom \
       custom; \

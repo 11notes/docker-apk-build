@@ -1,0 +1,8 @@
+#!/bin/ash
+  cd ${APP_ROOT}
+  newapkbuild ${APK_NAME}
+  cp -R /src/* ${APP_ROOT}/${APK_NAME}
+  cd ${APP_ROOT}/${APK_NAME}
+  abuild checksum
+  abuild -r
+  cp -R ${APP_ROOT}/packages/apk/ /apk

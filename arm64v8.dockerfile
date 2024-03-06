@@ -1,4 +1,4 @@
-# :: Arch
+# :: QEMU
   FROM multiarch/qemu-user-static:x86_64-aarch64 as qemu
 
 # :: Header
@@ -24,9 +24,13 @@
   # :: change home
     RUN set -ex; \
       mkdir -p ${APP_ROOT}; \
+      mkdir -p /apk; \
+      mkdir -p /src; \
       usermod -d ${APP_ROOT} docker; \
-      chown -R 1000:1000 ${APP_ROOT};
-
+      chown -R 1000:1000 \
+        /apk \
+        /src \
+        ${APP_ROOT};
 
   # :: setup groups
     RUN set -ex; \
