@@ -23,7 +23,7 @@ What can I do with this? Well simply put, you can build your own APK for Alpine 
   COPY --from=build /apk /apk/custom <sup>1</sup>
   RUN set -ex; \
     apk add --no-cache --allow-untrusted --repository /apk/custom \
-      custom; \
+      custom;
 ```
 
 # DEFAULT SETTINGS
@@ -32,7 +32,7 @@ What can I do with this? Well simply put, you can build your own APK for Alpine 
 | `user` | docker | user docker |
 | `uid` | 1000 | user id 1000 |
 | `gid` | 1000 | group id 1000 |
-| `home` | /apk | home directory of user docker |
+| `home` | /apk-build | home directory of user docker |
 
 # ENVIRONMENT
 | Parameter | Value | Default |

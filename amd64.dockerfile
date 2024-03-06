@@ -1,6 +1,6 @@
 # :: Header
   FROM 11notes/alpine:stable
-  ENV APP_ROOT=/apk
+  ENV APP_ROOT=/apk-build
 
 # :: Run
   USER root

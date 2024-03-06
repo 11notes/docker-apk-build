@@ -4,7 +4,7 @@
 # :: Header
   FROM 11notes/alpine:arm64v8-stable
   COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
-  ENV APP_ROOT=/apk
+  ENV APP_ROOT=/apk-build
 
 # :: Run
   USER root
